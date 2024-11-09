@@ -1,0 +1,73 @@
+{
+  "compilerOptions": {
+    "lib": ["es2017"],
+    "noImplicitAny": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "inlineSources": true,
+    // Set `sourceRoot` to  `/` to strip the build path prefix from
+    // generated source code references. This allows Sentry to match source files
+    // relative to your source root folder.
+    "sourceRoot": "/",
+    "strict": true,
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "dist",
+    "rootDir": "./",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "types/*": ["@types/*", "node"],
+      "~tests/*": ["tests/*"]
+    }
+  },
+  "include": ["./**/*.ts", "@types/*.d.ts"],
+  "exclude": ["node_modules/**/*", ".webpack/**/*", "_warmup/**/*", ".vscode/**/*"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// {
+//   "compilerOptions": {
+//     "target": "ES6",                          // Use ES6 for modern features
+//     "module": "commonjs",                      // Use CommonJS for compatibility with Node.js
+//     "outDir": "./dist",                        // Output compiled files to ./dist
+//     "rootDir": "./src",                        // Root directory for source files
+//     "strict": true,                            // Enable strict mode
+//     "esModuleInterop": true,                   // Enable compatibility with CommonJS modules
+//     "skipLibCheck": true,                      // Skip type checking of declaration files
+//     "experimentalDecorators": true,            // Enable decorators
+//     "emitDecoratorMetadata": true,             // Emit metadata for decorators (needed for TypeORM)
+//     "strictPropertyInitialization": false,     // Disable strict property initialization for TypeORM
+//     "forceConsistentCasingInFileNames": true,  // Enforce consistent file name casing
+//     "moduleResolution": "node",                // Resolve modules with Node's module resolution
+//     "allowSyntheticDefaultImports": true,      // Allow default imports from modules with no default export
+//     "resolveJsonModule": true,                 // Allow importing JSON files
+//     "isolatedModules": true,                   // For faster compilation, especially useful in larger projects
+//     "lib": ["es2017"],
+//     "noImplicitAny": false,
+//     "removeComments": true,
+//     "sourceMap": true,
+//     "inlineSources": true,
+//   },
+//   "include": ["src"],                          // Ensure only source files are included
+//   "exclude": ["node_modules", "dist"]          // Exclude compiled output and node_modules
+// }

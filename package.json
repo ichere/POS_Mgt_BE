@@ -1,0 +1,36 @@
+{
+  "name": "pos_mgt_be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration:create": "cross-var ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli migration:create ./datastore/migrations/$npm_config_name",
+    "migration:generate": "cross-var npm run typeorm -- migration:generate ./src/migrations/$npm_config_name",
+    "migration:run": "npm run build && npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert",
+    "typeorm:generate": "npx typeorm-ts-node-esm migration:generate -d datastore/migration"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "db-migrate-pg": "^1.5.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "pg": "^8.11.5",
+    "tsconfig-paths": "^4.2.0",
+    "typeorm": "^0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/pg": "^8.11.10",
+    "cross-var": "^1.1.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
